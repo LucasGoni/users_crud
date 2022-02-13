@@ -16,8 +16,7 @@ const model = {
       id: model.all().length == 0 ? 1 : model.all().pop().id + 1,
       email: String(data.email),
       password: bcrypt.hashSync(data.password, 10),
-      // Toma la contraseña, calcula la verificación del hash y la encripta
-      // El hash es un algoritmo que convierte la contraseña indescifrable
+      // bcrypt takes the password, calculates a hash verification and encripts it
       isAdmin: String(data.email).includes("@digitalhouse.com"),
       isActive: true,
     }),
